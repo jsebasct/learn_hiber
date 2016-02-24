@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="entities.Equipo"  table="equipos" >
+        <id name="id" column="eq_id">
+            <generator class="identity" />
+        </id>
+        <property name="nombre" column="e_nombre" />
+        
+        <set name="jugadores" table="jugador" lazy="true" >
+            <key>
+                <column name="eq_id" not-null="true" />
+            </key>
+            <one-to-many class="entities.Jugador"/>
+        </set> 
+        
+    </class>
+</hibernate-mapping>

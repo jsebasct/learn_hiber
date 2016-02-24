@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="entities.Personaje"   table="personajes" >
+        <id name="id" column="per_id">
+            <generator class="identity" />
+        </id>
+        <property name="tipo" column="per_tipo" />
+        <property name="hp" column="per_hp" />
+        <property name="mp" column="per_mp" />
+        
+        <bag name="equipos" lazy="true" cascade="all" table="equipos_personajes">
+            <key column="fk_per" />
+            <many-to-many column="fk_eq" class="entities.Equipo" />
+        </bag>
+    </class>
+</hibernate-mapping>
