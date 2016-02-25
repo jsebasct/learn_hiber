@@ -6,13 +6,12 @@
 package entities;
 
 import java.io.Serializable;
-import java.util.logging.Logger;
 
 /**
  *
  * @author USUARIO
  */
-public class Personaje implements Serializable{
+public class Jugador implements Serializable{
     
     private Long id;
     private String tipo;
@@ -20,11 +19,11 @@ public class Personaje implements Serializable{
     private int mp;
     private Equipo equipo;
     
-    public Personaje() {    
+    public Jugador() {    
     }
     
 
-    public Personaje(String tipo, int hp, int mp) {
+    public Jugador(String tipo, int hp, int mp) {
         this.tipo = tipo;
         this.hp = hp;
         this.mp = mp;

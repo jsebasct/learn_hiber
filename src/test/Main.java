@@ -7,7 +7,7 @@ package test;
 
 import dao.EquipoDAO;
 import entities.Equipo;
-import entities.Personaje;
+import entities.Jugador;
 import java.util.LinkedList;
 import java.util.List;
 import util.HibernateUtil;
@@ -18,14 +18,14 @@ import util.HibernateUtil;
  */
 public class Main {
     public static void main(String[] args) {
-        Personaje person1 = new Personaje("TipoA", 10, 10);
-        Personaje person2 = new Personaje("TipoB", 10, 10);
+        Jugador person1 = new Jugador("TipoA", 10, 10);
+        Jugador person2 = new Jugador("TipoB", 10, 10);
         
         Equipo equipo = new Equipo("Equipo Lanus");
-        List<Personaje> personajes = new LinkedList<Personaje>();
+        List<Jugador> personajes = new LinkedList<Jugador>();
         personajes.add(person1);
         personajes.add(person2);
-        equipo.setPersonajes(personajes);
+       //equipo.setPersonajes(personajes);
         
         EquipoDAO.salvarEquipo(equipo);
     }

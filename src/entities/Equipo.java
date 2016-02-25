@@ -7,15 +7,17 @@ package entities;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
  * @author USUARIO
  */
 public class Equipo implements Serializable {
+    
     private Long id;
     private String nombre;
-    private List<Personaje> personajes;
+    private Set<Jugador> jugadores;
 
     public Equipo() {
         
@@ -41,12 +43,16 @@ public class Equipo implements Serializable {
         this.nombre = nombre;
     }
 
-    public List<Personaje> getPersonajes() {
-        return personajes;
+    public Set<Jugador> getPersonajes() {
+        return jugadores;
     }
 
-    public void setPersonajes(List<Personaje> personajes) {
-        this.personajes = personajes;
+    public void setPersonajes(Set<Jugador> personajes) {
+        this.jugadores = personajes;
     }
-            
+           
+//    public List<Personaje> getPersonajes() {
+//        return this.personajes;
+//    }
+    
 }
