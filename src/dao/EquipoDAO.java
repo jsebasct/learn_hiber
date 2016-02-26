@@ -18,7 +18,7 @@ public class EquipoDAO {
     public static void salvarEquipo(Equipo equipo){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        t.begin();
+//        t.begin();
         session.save(equipo);
         t.commit();
    }

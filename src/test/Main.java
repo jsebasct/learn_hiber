@@ -8,8 +8,8 @@ package test;
 import dao.EquipoDAO;
 import entities.Equipo;
 import entities.Jugador;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import util.HibernateUtil;
 
 /**
@@ -20,13 +20,17 @@ public class Main {
     public static void main(String[] args) {
         Jugador person1 = new Jugador("TipoA", 10, 10);
         Jugador person2 = new Jugador("TipoB", 10, 10);
-        
+       
         Equipo equipo = new Equipo("Equipo Lanus");
-        List<Jugador> personajes = new LinkedList<Jugador>();
+        Set<Jugador> personajes = new HashSet<>();
         personajes.add(person1);
         personajes.add(person2);
-       //equipo.setPersonajes(personajes);
+        System.out.println("-->" + personajes.size());
+        equipo.setJugadores(personajes);
         
         EquipoDAO.salvarEquipo(equipo);
+        System.out.println("End");
+        
+        HibernateUtil.shutdown();
     }
 }

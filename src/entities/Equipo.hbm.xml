@@ -8,7 +8,7 @@
         </id>
         <property name="nombre" column="e_nombre" />
         
-        <set name="jugadores" table="jugador" lazy="true" inverse="true" fetch="select" >
+        <set name="jugadores" table="jugador" lazy="true" inverse="true" fetch="select" cascade="all">
             <key>
                 <column name="eq_id" not-null="true" />
             </key>
