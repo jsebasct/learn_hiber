@@ -25,6 +25,10 @@ public class Main {
         Set<Jugador> personajes = new HashSet<>();
         personajes.add(person1);
         personajes.add(person2);
+        
+        person1.setEquipo(equipo);
+        person2.setEquipo(equipo);
+        
         System.out.println("-->" + personajes.size());
         equipo.setJugadores(personajes);
         
